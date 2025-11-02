@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Gaming Zone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Keep Share Tech Mono if you want to use it elsewhere -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: #111;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffff;
+     
+    }
+
+    .fullscreen-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .form-section {
+      background-color: #1a1a1a;
+      padding: 40px;
+      border: 2px solid #00ffff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffff55;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      background-color: #111;
+      border: 2px solid #00ffff;
+      border-radius: 8px;
+      color: #00ffff;
+      font-size: 1rem;
+      outline: none;
+      box-shadow: 0 0 6px #00ffff33;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      height: 120px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      box-shadow: 0 0 12px #00ffffaa;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background-color: #00ffff;
+      color: #111;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #00cccc;
+    }
+
+    /* Mobile tweak */
+    @media (max-height: 600px) {
+      html, body {
+        overflow: auto; /* enable scroll on very short screens */
+      }
+    }
+  </style>
+</head>
+<body>
+     <header class="navbar">
+    <nav class="nav-center">
+      <h3 class="gaming-title">
+        GAMING ZONE
+        <hr color="#00ffff">
+      </h3>
+      <ul style="font-family: 'Orbitron', sans-serif;" class="nav-list" id="navList">
+        <!-- <li><a href="#">RACING</a></li> -->
+        <!-- <li><a href="#">AUTOMOTIVE</a></li> -->
+        <li><a href="Home.html">HOME</a></li>
+        <li ><a href="About.html">ABOUT</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+        <li><a href="#">STORE</a></li>
+        <li><a href="Faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+   
+
+  </header>
+  <div class="navbar-border-shape"></div>
+
+  <img class="nav-image" src="Images/Console_logo.png" alt="Logo">
+
+
+
+
+  <div class="fullscreen-wrapper">
+    
+    <section class="form-section">
+      <h2>Contact Gaming Zone</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Type your message here..." required></textarea>
+        </div>
+
+        <button class="submit-btn" type="submit">Send Message</button>
+      </form>
+    </section>
+    
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2 style="letter-spacing: 7px;">GAMING ZONE</h2>
+        <p style="font-size: 1.2REM;">Where 4000+ games come to life. Play anytime, on any device — completely free.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4 style="letter-spacing: 2PX;">Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Racing</a></li>
+          <li><a href="#">Store</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="icons">
+          <a href="#" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Gaming Zone. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Keep Share Tech Mono if you want to use it elsewhere -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Style.css">
+  <title>Game Hub</title>
+</head>
+
+<body>
+  <!-- Vector Parkour Game Container -->
+  <div id="vectorParkourGame" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#111; z-index:10000;">
+    <canvas id="parkourCanvas" style="display:block; margin:0 auto;"></canvas>
+    <div style="position:absolute; top:20px; right:20px; display:flex; gap:10px;">
+      <button onclick="exitVectorParkour()" style="padding:10px 20px; background:#f00; color:white; border:none; cursor:pointer;">
+        Exit
+      </button>
+      <button onclick="resetVectorParkour()" style="padding:10px 20px; background:#0a0; color:white; border:none; cursor:pointer;">
+        Retry
+      </button>
+    </div>
+    <div id="gameOverScreen" style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center;">
+      <h2 style="color:#fff; font-family:Orbitron; margin-bottom:20px;">Game Over!</h2>
+      <button onclick="resetVectorParkour()" style="padding:15px 30px; background:#0a0; color:white; border:none; cursor:pointer; font-size:18px;">
+        Play Again
+      </button>
+    </div>
+  </div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="loading-bar-container">
+        <div class="loading-bar"></div>
+        <div class="loading-percentage">0%</div>
+      </div>
+      <div class="preloader-animation">
+        <div class="game-controller">
+          <div class="controller-body">
+            <div class="d-pad">
+              <div class="d-pad-center"></div>
+              <div class="d-pad-up"></div>
+              <div class="d-pad-right"></div>
+              <div class="d-pad-down"></div>
+              <div class="d-pad-left"></div>
+            </div>
+            <div class="action-buttons">
+              <div class="button-a"></div>
+              <div class="button-b"></div>
+            </div>
+            <div class="shoulder-buttons">
+              <div class="button-l"></div>
+              <div class="button-r"></div>
+            </div>
+          </div>
+        </div>
+        <div class="loading-text">Initializing Gaming Hub...</div>
+      </div>
+    </div>
+  </div>
+  <!-- End Preloader -->
+
+  <header class="navbar">
+    <nav class="nav-center">
+    <div class="gaming-title box">
+  <h3 class="gaming-title">
+    GAMING ZONE
+  </h3>
+ 
+</div>
+
+      </h3>
+         <!-- Hamburger Icon -->
+    <button class="menu-toggle" onclick="toggleMenu()"></button>
+      <ul style="font-family: 'Orbitron', sans-serif;" class="nav-list" id="navList">
+        <!-- <li><a href="#">RACING</a></li> -->
+        <li><a href="Home.html">HOME</a></li>
+        <li ><a href="About.html">ABOUT</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+        <li><a href="#">STORE</a></li>
+        <li><a href="Faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <!-- <div class="search-container">
+  <input type="text" id="gameSearch" placeholder="Search games..." oninput="filterGames()" />
+  <i class="fas fa-search search-icon"></i>
+</div> -->
+
+  </header>
+
+
+
+  
+  <div class="navbar-border-shape"></div>
+
+  <img class="nav-image" src="Images/Console_logo.png" alt="Logo">
+
+  <main>
+    <h2 class="top1">Welcome to Gaming Hub</h2>
+    <p style="text-align: center; letter-spacing: 1px; font-family: 'Orbitron', sans-serif; font-size: 1rem; margin-top: 5px;">
+      Our Games Are Here Enjoy
+    </p>
+
+    <div class="welcome-section">
+      <div class="welcome-title"></div>
+      <div class="welcome-features">
+        <span class="feature-item">4000+ games</span>
+        <span class="feature-item">No install needed</span>
+        <span class="feature-item">On any device</span>
+        <span class="feature-item">Play with friends</span>
+        <span class="feature-item">All for free</span>
+      </div>
+    </div>
+
+    <!-- Games Sections -->
+    <section class="games-section">
+      <h6 style="margin-top: -4%; font-family: 'Orbitron', sans-serif;font-size: 2.5rem;">Classic Games</h6>
+      <div class="games-grid">
+        <div class="game-card" onclick="playGame('https://ubg98.github.io/SubwaySurfers/')">
+          <img src="Images/Subway.png" alt="Game 1">
+          <h4>Subway Surfers</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card" onclick="playGame('https://mgarciaisaia.github.io/2048/')">
+          <img src="Images/Number2048.avif" alt="2048 Game">
+          <h4>2048</h4>
+          <div class="rating">★★★★☆</div>
+        </div>
+
+        <div class="game-card" onclick="playGame('https://mrdiamonddirt.github.io/parkingGame/')">
+          <img src="Images/Parking.png" alt="Car Parking Game">
+          <h4>Car Parking Game</h4>
+          <div class="rating">★★★★☆</div>
+        </div>
+
+        <div class="game-card" onclick="playGame('https://8ballpool.com/en/game')">
+          <img src="Images/8BallPool.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card" onclick="playGame('https://hyspace.github.io/flappy/')">
+          <img src="Images/FlappyBird.png" alt="Flappy Bird Clone">
+          <h4>Flappy Bird</h4>
+          <div class="rating">★★★★☆</div>
+        </div>
+
+        <div class="game-card" onclick="launchVectorParkourWithSound()">
+          <img src="https://play-lh.googleusercontent.com/ZNQukmcuKWamE99e69EdDOLPl0zfrl4zsDcIPIZs-ZC_4TYQaj58ch8-FxiOSudCVqU" alt="Vector Parkour">
+          <h4>Vector Parkour</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card" onclick="playGame('https://ubg98.github.io/SubwaySurfers/')">
+          <img src="Images/Tank.png" alt="Game 1">
+          <h4>Tank War</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card" onclick="playGame('https://abdulrahman-007.github.io/Racing-Game/')">
+          <img src="https://play-lh.googleusercontent.com/nubEn3WHBWWDWNR9SjhtF56RCg_-kZNlKmnbI8XrcFlTEeUT8E-G0otXxkBlP7GQoOM" alt="Game 1">
+          <h4>Racing Game</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/UNO_Logo.svg"Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/HillClimb2.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+     
+      </div>
+    </section>
+
+    <!-- Adults Games Section -->
+    <section class="games-section">
+      <h6 style="margin-top: 3%; font-family: 'Orbitron', sans-serif;font-size: 2.5rem;">Retro Games</h6>
+      <div class="games-grid">
+        
+        <div class="game-card">
+          <img class="game1" src="https://play-lh.googleusercontent.com/ZNQukmcuKWamE99e69EdDOLPl0zfrl4zsDcIPIZs-ZC_4TYQaj58ch8-FxiOSudCVqU" alt="Game i1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/FlappyBird.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/8BallPool.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/Parking.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/Subway.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+        <div class="game-card">
+          <img src="Images/CutTheRope.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/HillClimb2.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/Number2048.avif" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/Parking.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/Tank.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Old People Games Section -->
+    <section class="games-section">
+      <h6 style="margin-top: 2%; font-family: 'Orbitron', sans-serif;font-size: 2.5rem;">Senior Games</h6>
+      <div class="games-grid">
+        <div class="game-card">
+          <img class="game1" src="https://play-lh.googleusercontent.com/ZNQukmcuKWamE99e69EdDOLPl0zfrl4zsDcIPIZs-ZC_4TYQaj58ch8-FxiOSudCVqU" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/8BallPool.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/CutTheRope.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/FlappyBird.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/Subway.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+        <div class="game-card">
+          <img src="Images/HillClimb2.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/Number2048.avif" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/Tank.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/Subway.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="game-card">
+          <img src="Images/Tank.png" alt="Game 1">
+          <h4>Game Title 1</h4>
+          <div class="rating">★★★★★</div>
+        </div>
+   
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2 style="letter-spacing: 7px;">GAMING ZONE</h2>
+        <p style="font-size: 1.2REM;">Where 4000+ games come to life. Play anytime, on any device — completely free.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4 style="letter-spacing: 2PX;">Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Racing</a></li>
+          <li><a href="#">Store</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="icons">
+          <a href="#" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Gaming Zone. All Rights Reserved.</p>
+    </div>
+  </footer
+  >
+  
+
+  <audio id="clickSound" src="Sound/ClickSound.wav" preload="auto"></audio>
+  <script src="Script.js"></script>
+</body>
+
+</html>

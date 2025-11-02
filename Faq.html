@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - Games Vision</title>
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Keep Share Tech Mono if you want to use it elsewhere -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #00ffff;
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 20px;
+      border: 2px solid #00ffff;
+      border-radius: 12px;
+      box-shadow: 0 0 25px #00ffff88;
+      background-color: #111;
+    }
+
+    .faq-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #00ffff33;
+      padding-bottom: 15px;
+    }
+
+    .faq-question {
+      font-size: 1.2rem;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #cccccc;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: "-";
+    }
+  </style>
+</head>
+<body>
+    <header class="navbar">
+    <nav class="nav-center">
+      <h3 class="gaming-title">
+        GAMING ZONE
+        <hr color="#00ffff">
+      </h3>
+      <ul style="font-family: 'Orbitron', sans-serif;" class="nav-list" id="navList">
+        <!-- <li><a href="#">RACING</a></li> -->
+        <!-- <li><a href="#">AUTOMOTIVE</a></li> -->
+        <li><a href="Home.html">HOME</a></li>
+        <li ><a href="About.html">ABOUT</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+        <li><a href="#">STORE</a></li>
+        <li><a href="Faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <!-- <div class="search-container">
+  <input type="text" id="gameSearch" placeholder="Search games..." oninput="filterGames()" />
+  <i class="fas fa-search search-icon"></i>
+</div> -->
+
+  </header>
+  <div class="navbar-border-shape"></div>
+
+  <img class="nav-image" src="Images/Console_logo.png" alt="Logo">
+
+
+<div class="faq-container">
+  <h1 class="faq-title">Frequently Asked Questions</h1>
+
+  <div class="faq-item">
+    <div class="faq-question">What is Games Vision?</div>
+    <div class="faq-answer">Games Vision is a platform where you can discover and explore a wide range of games for kids, teens, and adults with an immersive futuristic UI.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Do I need to create an account?</div>
+    <div class="faq-answer">No, you can browse freely. However, creating an account gives you access to more features like saving favorites and tracking your activity.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">How do I search for a specific game?</div>
+    <div class="faq-answer">Use the search bar at the top of the page. Just start typing the game name, and suggestions will appear instantly.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Can I suggest a game to add?</div>
+    <div class="faq-answer">Absolutely! Head over to our Contact page and fill out the suggestion form with the game details.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Are the games free to play?</div>
+    <div class="faq-answer">Yes! All the games on Gaming Zone are completely free to play with no hidden costs.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Can I play games on mobile devices?</div>
+    <div class="faq-answer">Yes, our platform is fully responsive. You can enjoy your favorite games on desktop, tablet, or mobile.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Why is a game not loading?</div>
+    <div class="faq-answer">Please check your internet connection, disable browser extensions like ad blockers, and ensure your browser is up to date.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">How often are new games added?</div>
+    <div class="faq-answer">We update our library weekly with new and trending games from top indie developers.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Can I save my progress?</div>
+    <div class="faq-answer">Some games support saving progress locally or via login. Look for the "Save Game" icon within each game.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Is this website safe for children?</div>
+    <div class="faq-answer">Yes. We carefully review each game to ensure it is age-appropriate. However, parental guidance is always advised for younger users.</div>
+  </div>
+</div>
+
+
+  </div>
+ <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2 style="letter-spacing: 7px;">GAMING ZONE</h2>
+        <p style="font-size: 1.2REM;">Where 4000+ games come to life. Play anytime, on any device — completely free.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4 style="letter-spacing: 2PX;">Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Racing</a></li>
+          <li><a href="#">Store</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="icons">
+          <a href="#" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Gaming Zone. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script>
+    // Toggle answer visibility
+    document.querySelectorAll(".faq-question").forEach(question => {
+      question.addEventListener("click", () => {
+        const item = question.parentElement;
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>
